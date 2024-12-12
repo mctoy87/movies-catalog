@@ -1,8 +1,11 @@
 @import url('./normilize.css');
 @import url('default.css');
 @import url('./fonts.css');
+@import url('/css/catalog.css');
 @import url('./movies.css');
 @import url('/css/card.css');
+@import url('/css/loader.css');
+@import url('/css/hero.css');
 
 body {
   font-family: "Oswald", serif;

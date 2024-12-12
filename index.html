@@ -14,7 +14,7 @@
   <header></header>
   <main>
     <section class="catalog">
-      <div class="container">
+      <div class="container catalog__container">
         <h2 class="catalog__title visually-hidden">Все фильмы</h2>
         <div class="catalog__film-container movies">
           <h3 class="movies__title">Каталог фильмов</h3>
@@ -55,9 +55,45 @@
               <p class="card__release-date">2018</p>
               <p class="card__rate">Рейтинг: 9.2</p>
             </li>
+            <li class="movies__item card">
+              <img src="./img/cover.webp" alt="Постер фильма 'Обливион'" class="card__img">
+              <h4 class="card__title">Обливион</h4>
+              <p class="card__release-date">2018</p>
+              <p class="card__rate">Рейтинг: 9.2</p>
+            </li>
+            <li class="movies__item card">
+              <img src="./img/cover.webp" alt="Постер фильма 'Обливион'" class="card__img">
+              <h4 class="card__title">Обливион</h4>
+              <p class="card__release-date">2018</p>
+              <p class="card__rate">Рейтинг: 9.2</p>
+            </li>
           </ul>
 
-          <button class="movie__show-more" type="button">Следующие 20 фильмов</button>
+          <!--css loader-->
+          <div class="movies__loader-wrapper">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+
+          <button class="movies__show-more" type="button">Следующие 20 фильмов</button>
+        </div>
+        <div class="catalog__hero-container hero">
+            <h3 class="hero__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi a quam nostrum quod quos minima accusantium esse, nisi vitae labore, provident reiciendis facilis, distinctio vero in ratione perferendis quae at.
+              Ad, distinctio nulla tenetur labore laudantium esse harum sed officiis iste molestiae amet delectus hic? Asperiores amet, molestiae possimus esse, laudantium eum deleniti sunt fugit, culpa reiciendis deserunt illum dolor?
+              Ut dolorem facilis atque exercitationem possimus, corrupti nemo? Laudantium eveniet saepe eos voluptas iure ratione iusto similique quo repudiandae accusantium alias, debitis, sed reprehenderit veritatis soluta. Excepturi soluta voluptates aut.
+              Ab ex voluptatum blanditiis aut, illum necessitatibus, dicta quae dignissimos provident delectus laudantium fugiat vel incidunt alias veritatis nemo libero minima molestias id culpa eum! Obcaecati voluptatibus dolore aperiam mollitia?
+              Rem fugit incidunt ipsam dicta molestias mollitia distinctio neque ut eos, non perspiciatis, nisi quos in ipsum quaerat accusamus eaque et ratione numquam. Esse quod adipisci reiciendis eius delectus exercitationem!
+              Dicta quod eum illo animi nobis totam corporis aut nostrum quo! Amet ad, dolor voluptate voluptates, enim culpa minus maiores perspiciatis architecto quis blanditiis itaque? Neque perferendis impedit doloremque ipsam?
+              Qui, voluptates? Neque alias accusamus ipsum incidunt. Suscipit, recusandae saepe! Cumque id inventore temporibus asperiores fugit, facere, quod eos deleniti quasi veniam non accusantium molestiae quae consequatur error. Repellendus, quam?
+              Repellendus est inventore ab dolores dolorem voluptates iure atque, error vitae minima alias consequatur ut molestiae explicabo nostrum necessitatibus nobis doloremque, sapiente fuga. Ratione deleniti, laborum tempore minus adipisci repellat.
+              Magni iure sed veniam sunt velit, maiores vitae nostrum officia. Culpa dignissimos quo fugit nostrum officiis amet. Ipsum, necessitatibus natus quam, aspernatur enim vitae suscipit dolores debitis vel, esse consequuntur.
+              Ducimus magnam expedita soluta provident tenetur, unde ipsam omnis deleniti, quia tempora pariatur nihil doloremque quo. Nisi cupiditate placeat facilis id beatae repellendus nesciunt architecto ad, fugit minus voluptatem nostrum!</h3>
+              <button class="hero__close" type="button">
+                <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px" y="0px" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve">
+                  <polygon fill="#fff" points="11.387,490 245,255.832 478.613,490 489.439,479.174 255.809,244.996 489.439,10.811 478.613,0 245,234.161
+                  11.387,0 0.561,10.811 234.191,244.996 0.561,479.174 " />
+                </svg>
+              </button>
         </div>
       </div>
     </section>

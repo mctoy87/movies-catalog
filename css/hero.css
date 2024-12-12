@@ -1,0 +1,14 @@
+.hero {
+  flex-basis: 40vw;
+    height: 100vh;
+    position: sticky;
+    top: 10px;
+}
+
+.hero__wrapper {
+
+}
+
+.hero__close {
+  width: 24px;
+}

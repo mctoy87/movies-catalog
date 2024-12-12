@@ -1,6 +1,6 @@
 .movies {
   padding: 25px 15px 100px;
-  width: 930px;
+  flex-basis: 930px;
   min-height: 100vh;
   border-right: 1px solid red;
 }
@@ -37,7 +37,12 @@
   margin-bottom: 30px;
 }
 
-.movie__show-more {
+.movies__loader-wrapper {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.movies__show-more {
   display: block;
   margin: 0 auto;
   padding: 10px 30px;
