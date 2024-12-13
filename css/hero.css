@@ -1,14 +1,65 @@
 .hero {
-  flex-basis: 40vw;
-    height: 100vh;
-    position: sticky;
-    top: 10px;
+  flex: 0 0 30%;
+  position: sticky;
+  padding: 25px 15px;
+  top: 0;
+  height: fit-content;
+  border-right: 1px solid #162344;
+  background-color: rgba(5, 56, 185, 0.2);
 }
 
-.hero__wrapper {
+.hero__poster {
+}
 
+.hero__title {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.hero__img-wrapper {
+  margin-bottom: 15px;
+}
+
+.hero__img {
+}
+
+.hero__description-wrapper {
+  color: aqua;
+}
+
+.hero__year {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.hero__rating {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.hero__duration {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.hero__country {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero__description {
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .hero__close {
-  width: 24px;
 }
+
+.hero__close {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  width: 15px;
+}
+

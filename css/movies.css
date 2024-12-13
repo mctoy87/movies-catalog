@@ -1,8 +1,8 @@
 .movies {
   padding: 25px 15px 100px;
-  flex-basis: 930px;
-  min-height: 100vh;
-  border-right: 1px solid red;
+  flex: 1;
+  max-width: 65%;
+  border-right: 1px solid #162344;
 }
 
 .movies__title {

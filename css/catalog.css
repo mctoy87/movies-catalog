@@ -1,3 +1,5 @@
 .catalog__container {
   display: flex;
+  justify-content: space-between;
+  overflow-x: visible;
 }
