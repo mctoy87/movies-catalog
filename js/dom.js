@@ -1,4 +1,10 @@
 // Этот модуль будет отвечать за создание элементов DOM.
+
+/**
+ * Создает элемент рейтинга фильма.
+ * @param {number} rate - Рейтинг фильма.
+ * @returns {HTMLElement|null} - Элемент рейтинга или null.
+ */
 export const createRatingElement = (rate) => {
   if (!rate) return null;
 
@@ -8,6 +14,11 @@ export const createRatingElement = (rate) => {
   return rating;
 };
 
+/**
+ * Создает карточку фильма.
+ * @param {Object} film - Объект фильма.
+ * @returns {HTMLElement} - Элемент карточки фильма.
+ */
 export const createFilmCard = (film) => {
   const li = document.createElement('li');
   li.classList.add('movies__item', 'card');
