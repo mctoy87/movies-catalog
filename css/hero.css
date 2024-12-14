@@ -4,8 +4,11 @@
   padding: 25px 15px;
   top: 0;
   height: fit-content;
+  max-height: 100vh;
   border-right: 1px solid #162344;
   background-color: rgba(5, 56, 185, 0.2);
+  overflow-y: auto;
+
 }
 
 .hero__poster {

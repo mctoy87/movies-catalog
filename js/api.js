@@ -1,6 +1,11 @@
+import { fetchAndRenderTopFilms } from "../index.js";
+import { btnShowMore, loader } from "./dom.js";
+
 // Этот модуль будет отвечать за взаимодействие с API.
-const URL_API = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/';
+export const URL_API = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/';
 const API_KEY = 'edd584cb-c0f9-4ae3-a4c3-619573f6526b';
+
+let queryPage = 1;
 
 /**
  * Функция для получения данных с заданного URL.
@@ -19,13 +24,39 @@ export const fetchData = async (url) => {
     throw new Error(`Ошибка HTTP: ${response.status}`);
   }
   const data = await response.json();
+
+  // hide preloader
+  loader.style.setProperty('display', 'none');
+
+  // проверка на доп страницы и отображение кнопки
+  if (data.totalPages > 1) {
+    btnShowMore.style.setProperty('display', 'block');
+    
+    // увеличиваем счетчик страниц queryPage на 1
+    if (data.totalPages > queryPage ) {
+      queryPage += 1;
+    } else {
+      //скрываем кнопку
+      btnShowMore.style.setProperty('display', 'none');
+    };
+    
+    // рендерим новую страницу с 20 фильмами
+    btnShowMore.onclick = fetchAndRenderTopFilms;
+  }
+
   return data;
 };
 
 /**
- * Функция для получения списка лучших фильмов.
+ * Функция для получения списка 250 лучших фильмов.
  * @returns {Promise<Object>} - Объект данных с фильмами.
  */
 export const fetchTopFilms = async () => {
-  return await fetchData(`${URL_API}collections?type=TOP_250_MOVIES&page=1`);
+  // show preloader
+  loader.style.setProperty('display', 'block');
+
+  //fetch films data
+  return await fetchData(`${URL_API}collections?type=TOP_250_MOVIES&page=${queryPage}`);
 };
+
+export const getQueryPage = () => queryPage; // Функция для получения текущей страницы

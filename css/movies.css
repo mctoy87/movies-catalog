@@ -40,10 +40,11 @@
 .movies__loader-wrapper {
   text-align: center;
   padding: 100px 0;
+  display: none;
 }
 
 .movies__show-more {
-  display: block;
+  display: none;
   margin: 0 auto;
   padding: 10px 30px;
 
