@@ -1,0 +1,91 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  padding: 30px;
+  overflow-y: auto;
+  display: none; 
+}
+
+.modal__main {
+  position: relative;
+  max-width: 600px;
+  background-color: azure;
+  margin: auto;
+  color: #000;
+  border-radius: 16px;
+  padding: 30px;
+  cursor: default; 
+}
+
+.modal__title {
+  margin-bottom: 30px; 
+}
+
+.modal__close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+  width: 30px;
+  height: 30px; 
+}
+
+.modal__close:focus-visible {
+  outline-color: green; 
+}
+
+.modal__title {
+  text-align: center;
+}
+
+.modal__form {
+  display: none; /* Скрыто по умолчанию */
+}
+
+.modal__form-active {
+  display: flex; /* Показываем активную форму */
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.modal__login,
+.modal__password,
+.modal__email {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.modal__submit {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.modal__signin-wrapper,
+.modal__login-wrapper {
+  text-align: center;
+}
+
+.modal__signin-link,
+.modal__login-link {
+  color: rgb(7, 150, 252);
+}

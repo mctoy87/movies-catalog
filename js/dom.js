@@ -13,6 +13,7 @@ export const catalogContainer = document.querySelector('.catalog__container');
 export const movies = document.querySelector('.movies');
 export const closeBtn = document.querySelector('.hero__close');
 
+
 /**
  * Создает элемент рейтинга фильма.
  * @param {number} rate - Рейтинг фильма.

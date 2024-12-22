@@ -1,0 +1,39 @@
+.header {
+  padding: 15px 0;
+}
+
+.header__nav {
+  padding: 0 15px;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+}
+
+.header__nav-item {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+
+  &:hover{
+    /* border: 1px solid blue; */
+    opacity: 0.5;
+    border-bottom: 1px solid aqua;
+  }
+}
+
+.header__nav-login {
+  margin-left: auto;
+}
+
+.header__nav-link {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  padding: 10px 0;
+}

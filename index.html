@@ -11,8 +11,27 @@
   <script type="module" src="./index.js" defer></script>
 </head>
 <body>
-  <header class="header"></header>
-    <!-- Здесь можно добавить навигацию -->
+  <header class="header">
+    <div class="container">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item" href="#">
+            <a class="header__nav-link">Главная</a>
+          </li>
+          <li class="header__nav-item" href="#">
+            <a class="header__nav-link">Поиск</a>
+          </li>
+          <li class="header__nav-item" href="#">
+            <a class="header__nav-link">Избранное</a>
+          </li>
+          <li class="header__nav-item header__nav-login" href="#">
+            <a class="header__nav-link">Вход</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <main>
     <section class="catalog">
       <div class="container catalog__container">
@@ -64,5 +83,40 @@
     </section>
 
   </main>
+
+  <footer>
+    <!-- Здесь нужно добавить подвал сайта -->
+  </footer>
+
+  <div class="modal">
+    <div class="modal__main">
+        <div class="modal__container">
+          <!-- Форма входа -->
+          <form class="modal__form modal__form-active" id="loginForm">
+            <h2 class="modal__title">Вход</h2>
+            <input class="modal__login" type="text" placeholder="Логин" required>
+            <input class="modal__password" type="password" placeholder="Пароль" required>
+            <button class="modal__submit" type="submit">Войти</button>
+            <p class="modal__login-wrapper">Нет аккаунта? 
+              <a class="modal__login-link" href="#">Зарегистрируйтесь</a>
+            </p>
+          </form>
+
+          <!-- Форма регистрации -->
+          <form class="modal__form" id="registrationForm">
+            <h2 class="modal__title">Регистрация</h2>
+            <input class="modal__login" type="text" placeholder="Имя" required>
+            <input class="modal__email" type="email" placeholder="Email" required>
+            <input class="modal__password" type="password" placeholder="Пароль" required>
+            <button class="modal__submit" type="submit">Зарегистрироваться</button>
+            <p class="modal__signin-wrapper">Уже есть аккаунт?
+              <a class="modal__signin-link" href="#">Войдите</a>
+            </p>
+          </form>
+        </div>
+
+        <button class="modal__close">&#10006;</button>
+    </div>
+  </div>
 </body>
 </html>
