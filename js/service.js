@@ -1,12 +1,16 @@
 
 // переводит формат времени в часы из минут
-export const formatFilmDuration = (minDuration) => {
+export const formatDuration = (minDuration) => {
+  if (minDuration < 0) {
+    throw new Error('Длительность не может быть отрицательной');
+  }
+
   const hours = Math.floor(minDuration / 60);
   const min = minDuration % 60;
 
-  let durationFilm = '';
-  if (hours > 0 ) durationFilm += (hours + 'ч. ');
-  if (min > 0 ) durationFilm += (min + ' мин.');
+  const parts = [];
+  if (hours > 0) parts.push(`${hours} ч.`);
+  if (min > 0) parts.push(`${min} мин.`);
 
-  return durationFilm;
+  return parts.length > 0 ? parts.join(' ') : '0 мин.';
 };

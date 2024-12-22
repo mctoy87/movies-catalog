@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movies DB</title>
+  <title>Каталог фильмов</title>
   <link rel="stylesheet" href="./css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <script type="module" src="./index.js"></script>
+  <script type="module" src="./index.js" defer></script>
 </head>
 <body>
-  <header></header>
+  <header class="header"></header>
+    <!-- Здесь можно добавить навигацию -->
   <main>
     <section class="catalog">
       <div class="container catalog__container">
         <h2 class="catalog__title visually-hidden">Все фильмы</h2>
         <div class="catalog__film-container movies">
-          <h3 class="movies__title">Каталог фильмов</h3>
-          <ul class="movies__list">
+          <h3 class="catalog__movies-title movies__title">Каталог фильмов</h3>
+          <ul class="catalog__movies-list movies__list">
+            <!-- Пример элемента фильма -->
             <!-- <li class="movies__item card">
               <img src="./img/cover.webp" alt="Постер фильма 'Обливион'" class="card__img">
               <h4 class="card__title">Обливион</h4>
@@ -28,11 +30,11 @@
           </ul>
 
           <!--css preloader-->
-          <div class="movies__loader-wrapper">
+          <div class="catalog__movies-loader-wrapper movies__loader-wrapper">
             <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           </div>
 
-          <button class="movies__show-more" type="button">Следующие 20 фильмов</button>
+          <button class="catalog__movies-show-more movies__show-more" type="button" aria-label="Открыть следующие 20 фильмов">Следующие 20 фильмов</button>
         </div>
         <div class="catalog__hero-container hero">
           <!-- <p class="hero__title">Oblivion</p>
@@ -46,7 +48,7 @@
             <p class="hero__country">Страна: США</p>
             <p class="hero__description">Земля, пережившая войну с&nbsp;инопланетными захватчиками, опустела; остатки человечества готовятся покинуть непригодную для жизни планету. Главный герой&nbsp;&mdash; техник по&nbsp;обслуживанию дронов&nbsp;&mdash; находит разбившийся корабль NASA, команда которого погибает у&nbsp;него на&nbsp;глазах. Ему удаётся спасти лишь одну женщину&nbsp;&mdash; и&nbsp;вскоре он&nbsp;понимает, что это перевернёт его жизнь.</p>
           </div>
-          <button class="hero__close" type="button">
+          <button class="hero__close" type="button" aria-label="Закрыть описание фильма">
             <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px" y="0px" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve">
               <polygon fill="#fff" points="11.387,490 245,255.832 478.613,490 489.439,479.174 255.809,244.996 489.439,10.811 478.613,0 245,234.161

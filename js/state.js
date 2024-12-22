@@ -1,16 +1,25 @@
 //контроль состояния параметра текущей страницы;
 
-let state = {
+export const state = {
   isFirstFetch: true, // Флаг для отслеживания первого запроса
-  queryPage: 1,
+  isPosterOpen: false, // Флаг для отслеживания открыт ли постер
+  queryPage: 1, //номер открытой страницы  с фильмами
+  currentFilmId: null, // идентификатор текущего фильма
 };
 
+// Геттеры
+export const getIsFirstFetch = () => state.isFirstFetch;
+export const getIsPosterOpen = () => state.isPosterOpen;
 export const getQueryPage = () => state.queryPage;
+export const getCurrentFilmId = () => state.currentFilmId;
 
-export const checkIsFirstFetch = () => state.isFirstFetch;
-
+// Сеттеры
 export const setIsFirstFetch = (flag) => {
   state.isFirstFetch = flag;
+};
+
+export const setIsIsPosterOpen = (flag) => {
+  state.isPosterOpen = flag;
 };
 
 export const incrementQueryPage = () => {
@@ -19,4 +28,8 @@ export const incrementQueryPage = () => {
 
 export const resetQueryPage = () => {
   state.queryPage = 1;
+};
+
+export const setCurrentFilmId = (id) => {
+  state.currentFilmId = id;
 };

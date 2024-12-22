@@ -1,7 +1,7 @@
 // Этот модуль будет отвечать за создание элементов DOM.
 
 import { handlePosterClose } from "./film.js";
-import { formatFilmDuration } from "./service.js";
+import { formatDuration } from "./service.js";
 
 // получаем DOM элементы
 export const movieList = document.querySelector('.movies__list');
@@ -34,19 +34,14 @@ export const createRatingElement = (rate) => {
  * @returns {textContent|null} - Элемент текстовый или null.
  */
 const getFilmCountries = (film) => {
-  if (!film.countries.length) return null;
+  if (!film.countries || film.countries.length === 0) return null;
 
-  if (film.countries.length > 0) {
-    let countryNames = ''; //имена стран где снимали фильм
-    // Если массив содержит только один элемент
-    if(film.countries.length === 1) {
-      countryNames = film.countries[0].country; // Извлекаем название страны
-    } else {
-      countryNames = film.countries.map(country => country.country).join(', ');
-    }
-    return `Страна: ${countryNames}`;
-  }
-}
+  // Получаем названия стран и объединяем их в строку
+  const countryNames = film.countries.map(country => country.country).join(', ');
+
+  // Возвращаем строку с названиями стран
+  return `Страна: ${countryNames}`;
+};
 
 /**
  * Создает карточку фильма.
@@ -79,13 +74,12 @@ export const createFilmCard = (film) => {
   return li;
 };
 
+/**
+ * Отображает детали фильма на странице.
+ * @param {Object} film - Объект фильма.
+ */
 
-
-// отобразить детали фильма на странице
 export const renderFilmDetails = (film) => {
-  // очищаем постер от прелоадера
-  posterElement.innerHTML = '';
-
    // Получаем текст стран
   const countriesText = getFilmCountries(film);
 
@@ -98,14 +92,14 @@ export const renderFilmDetails = (film) => {
     <div class="hero__description-wrapper">
       <p class="hero__year">Год: ${film.year}</p>
       <p class="hero__rating">Рейтинг: ${film.ratingKinopoisk}</p>
-      <p class="hero__duration">Продолжительность: ${formatFilmDuration(film.filmLength)}</p>
-      ${countriesText ? `<p class="hero__country">${getFilmCountries(film)}</p>` : ''}
+      <p class="hero__duration">Продолжительность: ${formatDuration(film.filmLength)}</p>
+      ${countriesText ? `<p class="hero__country">${countriesText}</p>` : ''}
       <p class="hero__description">${film.description}</p>
     </div>
     `);
     // создаем кнопку для закрытия постера
     const btnClose = document.createElement('button');
-    btnClose.setAttribute('type', 'buton');
+    btnClose.setAttribute('type', 'button');
     btnClose.classList.add('hero__close');
     btnClose.insertAdjacentHTML("beforeend", `
       <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
