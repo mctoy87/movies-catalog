@@ -1,0 +1,73 @@
+.hero {
+  flex: 0 0 40%;
+  position: sticky;
+  padding: 25px 15px;
+  top: 0;
+  height: fit-content;
+  max-height: 100vh;
+  border-right: 1px solid #162344;
+  background-color: rgba(5, 56, 185, 0.2);
+  overflow-y: auto;
+
+}
+
+.hero__poster {
+}
+
+.hero__title {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.hero__img-wrapper {
+  margin-bottom: 15px;
+}
+
+.hero__img {
+}
+
+.hero__description-wrapper {
+  color: aqua;
+}
+
+.hero__year {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.hero__rating {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.hero__duration {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.hero__country {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero__description {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.hero__close {
+}
+
+.hero__close {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  width: 15px;
+}
+
+
+.hero__loader-wrapper {
+  text-align: center;
+  padding: 100px 0;
+}

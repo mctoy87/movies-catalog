@@ -1,0 +1,24 @@
+@import url('./normilize.css');
+@import url('./default.css');
+@import url('./fonts.css');
+@import url('./header.css');
+@import url('./catalog.css');
+@import url('./movies.css');
+@import url('./card.css');
+@import url('./loader.css');
+@import url('./hero.css');
+@import url('./modal.css');
+
+body {
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: #000;
+  color: #fff;
+
+  background-image: url(../img/bg.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
