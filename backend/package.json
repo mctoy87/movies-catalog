@@ -8,6 +8,7 @@
     "start": "node ./dist/index.js"
   },
   "dependencies": {
+    "@trpc/server": "^11.0.0-rc.682",
     "express": "^4.21.2"
   },
   "devDependencies": {
