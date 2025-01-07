@@ -1,7 +1,7 @@
-import { fetchTopFilms } from './js/api.js';
-import { setupEventListeners } from './js/eventListeners.js';
-import { getFilmDetails, renderFilms } from './js/film.js';
-import { getIsFirstFetch, getIsPosterOpen, setIsFirstFetch, setCurrentFilmId } from './js/state.js';
+import { fetchTopFilms } from './src/js/api.js';
+import { setupEventListeners } from './src/js/eventListeners.js';
+import { getFilmDetails, renderFilms } from './src/js/film.js';
+import { getIsFirstFetch, getIsPosterOpen, setIsFirstFetch, setCurrentFilmId } from './src/js/state.js';
 
 !getIsFirstFetch() && setIsFirstFetch(true); // Сбрасываем флаг после перезагрузки
 

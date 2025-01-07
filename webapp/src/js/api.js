@@ -1,4 +1,4 @@
-import { fetchAndRenderTopFilms } from "../index.js";
+import { fetchAndRenderTopFilms } from "../../index.js";
 import { btnShowMore, loader } from "./dom.js";
 
 // Этот модуль будет отвечать за взаимодействие с API.

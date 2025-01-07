@@ -1,12 +1,12 @@
 @import url('./normilize.css');
-@import url('default.css');
+@import url('./default.css');
 @import url('./fonts.css');
 @import url('./header.css');
-@import url('/css/catalog.css');
+@import url('./catalog.css');
 @import url('./movies.css');
-@import url('/css/card.css');
-@import url('/css/loader.css');
-@import url('/css/hero.css');
+@import url('./card.css');
+@import url('./loader.css');
+@import url('./hero.css');
 @import url('./modal.css');
 
 body {
