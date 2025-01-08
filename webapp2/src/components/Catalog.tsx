@@ -1,29 +1,40 @@
 // src/components/Catalog.tsx
-import React from 'react';
 
-interface Film {
-  id: number;
-  nameRu: string;
-  year: number;
-  length: number;
-  rating: number;
-}
+import { trpc } from "../lib/trpc";
 
-interface CatalogProps {
-  films: Film[];
-}
+export const Catalog = () => {
+  const { data, error, isLoading, isFetching, isError } = trpc.getfilms.useQuery();
 
-export const Catalog: React.FC<CatalogProps> = ({films}) => {
+  if (isLoading || isFetching) {
+    return (
+      <div>
+        <p>Идет загрузка...</p>
+      </div>
+      // Это первоначальное подключение загрузчика
+      /*<div className="catalog__movies-loader-wrapper movies__loader-wrapper">
+        <div className="lds-roller">
+          <div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div>
+        </div>
+      </div>
+      */
+    );
+  }
+
+  if (isError) {
+    return <div>Ошибка загрузки: {error.message}</div>;
+  }
+
   return (
     <section className="catalog">
       <div className="container catalog__container">
         <h2 className="catalog__title visually-hidden">Все фильмы</h2>
         <div className="catalog__film-container movies">
           <h3 className="catalog__movies-title movies__title">Каталог фильмов</h3>
-            {films.length > 0 ? (
+          {data && data.films.length > 0 ? (
               <ul className="catalog__movies-list movies__list">
                 {/* Пример элемента фильма */}
-                {films.map(film => {
+                {data.films.map(film => {
                   return ( // Добавлено return
                     <li key={film.id} className="movies__item card">
                       <img src="./img/cover.webp" alt={film.nameRu} className="card__img" />
@@ -38,12 +49,7 @@ export const Catalog: React.FC<CatalogProps> = ({films}) => {
               <div>Нет доступных фильмов</div>
             )}
 
-          <div className="catalog__movies-loader-wrapper movies__loader-wrapper">
-            <div className="lds-roller">
-              <div></div><div></div><div></div><div></div>
-              <div></div><div></div><div></div><div></div>
-            </div>
-          </div>
+
 
           <button className="catalog__movies-show-more movies__show-more" type="button" aria-label="Открыть следующие 20 фильмов">
             Следующие 20 фильмов

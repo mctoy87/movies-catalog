@@ -1,16 +1,10 @@
 import express from 'express';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import { trpcRouter } from './trpc';
-
-const films = [
-  {id: 1234, nameRu: 'Man in black', year: 2001, length: 189, rating: 8.2},
-  {id: 1235, nameRu: 'Man in black', year: 2001, length: 189, rating: 8.2},
-  {id: 1236, nameRu: 'Man in black', year: 2001, length: 189, rating: 8.2},
-  {id: 1237, nameRu: 'Man in black', year: 2001, length: 189, rating: 8.2},
-  {id: 1238, nameRu: 'Man in black', year: 2001, length: 189, rating: 8.2},
-];
+import cors from 'cors';
 
 const expressApp = express();
+expressApp.use(cors());
 
 expressApp.get('/ping', (req, res) => {
   res.send('pong');
