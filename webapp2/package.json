@@ -1,5 +1,5 @@
 {
-  "name": "webapp2",
+  "name": "@moviescatalog/webapp2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json && tsc --noEmit --project ./tsconfig.app.json"
   },
   "dependencies": {
+    "@moviescatalog/backend": "file:../backend",
     "@tanstack/react-query": "^5.62.16",
     "@trpc/client": "^11.0.0-rc.688",
     "@trpc/react-query": "^11.0.0-rc.688",

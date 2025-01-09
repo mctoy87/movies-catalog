@@ -1,4 +1,4 @@
-import type {TrpcRouter} from '../../../backend/src/trpc';
+import type {TrpcRouter} from '@moviescatalog/backend/src/trpc';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createTRPCReact } from '@trpc/react-query';
