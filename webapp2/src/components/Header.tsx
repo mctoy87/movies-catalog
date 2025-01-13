@@ -1,4 +1,3 @@
-
 export const Header = () => (
   <header className="header">
     <div className="container">
@@ -21,4 +20,3 @@ export const Header = () => (
     </div>
   </header>
 );
-

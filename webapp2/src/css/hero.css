@@ -8,7 +8,6 @@
   border-right: 1px solid #162344;
   background-color: rgba(5, 56, 185, 0.2);
   overflow-y: auto;
-
 }
 
 .hero__poster {
@@ -65,7 +64,6 @@
   right: 15px;
   width: 15px;
 }
-
 
 .hero__loader-wrapper {
   text-align: center;

@@ -12,9 +12,7 @@
   text-transform: uppercase;
 }
 
-
 .movies {
-
   &__title {
   }
 
@@ -26,11 +24,9 @@
 
   &__item-title {
   }
-  
-
 }
 
-.movies__list{
+.movies__list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -53,8 +49,7 @@
   color: #fff;
   transition: opacity 0.2s ease-in;
 
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
 }
-

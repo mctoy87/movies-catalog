@@ -6,19 +6,21 @@
     },
     "settings": {
         "react": {
-          "version": "detect"  // Автоматически определяет версию React
+            "version": "detect" // Автоматически определяет версию React
         },
         "import/parsers": {
-            "@typescript-eslint/parser": [".ts", ".tsx"]
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
         },
         "import/resolver": {
             "typescript": {
                 "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
-                "project": 
-                    [
-                        "./webapp2/tsconfig.json",
-                        "./backend/tsconfig.json"
-                    ]
+                "project": [
+                    "./webapp2/tsconfig.json",
+                    "./backend/tsconfig.json"
+                ]
             }
         }
     },
@@ -28,9 +30,10 @@
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "plugin:import/recommended",
-        "plugin:react/jsx-runtime"
+        "plugin:react/jsx-runtime",
+        "prettier"
     ],
-    "ignorePatterns":[
+    "ignorePatterns": [
         "node_modules",
         "dist",
         "webapp"
@@ -46,7 +49,7 @@
         "import"
     ],
     "rules": {
-            // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
         // turn on errors for missing imports
         "import/no-unresolved": "error",
         "no-console": "off",

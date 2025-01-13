@@ -10,7 +10,6 @@
   display: flex;
   gap: 15px;
   align-items: center;
-
 }
 
 .header__nav-item {
@@ -19,8 +18,7 @@
   align-items: center;
   height: 100%;
 
-
-  &:hover{
+  &:hover {
     /* border: 1px solid blue; */
     opacity: 0.5;
     border-bottom: 1px solid aqua;

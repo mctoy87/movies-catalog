@@ -26,7 +26,6 @@ body {
   background-color: #fff;
 }
 
-
 img,
 svg {
   display: block;
@@ -37,7 +36,6 @@ svg {
 svg {
   max-height: 100%;
 }
-
 
 button {
   padding: 0;
@@ -78,7 +76,6 @@ iframe {
   position: fixed;
   transform: scale(0);
 }
-
 
 /*
 Пример контейнера
