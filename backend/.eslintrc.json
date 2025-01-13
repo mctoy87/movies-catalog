@@ -1,5 +1,0 @@
-{
-  "parserOptions": {
-    "project": "backend/tsconfig.json"
-  }
-}
