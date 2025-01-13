@@ -40,7 +40,7 @@ export const fetchData = async (url) => {
       } else {
         //скрываем кнопку
         btnShowMore.style.setProperty('display', 'none');
-      };
+      }
       
       // рендерим новую страницу с 20 фильмами
       btnShowMore.onclick = fetchAndRenderTopFilms;

@@ -1,7 +1,7 @@
 // Этот модуль будет отвечать за рендеринг фильмов.
 import { fetchData, URL_API } from './api.js';
-import { createFilmCard, movies, posterElement, renderFilmDetails } from './dom.js';
-import { movieList } from './dom.js';
+import { createFilmCard, movies, posterElement, renderFilmDetails , movieList } from './dom.js';
+
 import { setIsIsPosterOpen, getCurrentFilmId, getIsPosterOpen, setCurrentFilmId } from './state.js';
 
 export const renderFilms = (films) => {

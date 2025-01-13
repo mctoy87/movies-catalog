@@ -1,4 +1,4 @@
-import { closeBtn, posterElement, movieList, catalogContainer, movies } from "./dom.js"
+import { posterElement, movieList, movies } from "./dom.js"
 import { getFilmDetails, handlePosterClose } from "./film.js";
 import { modalController } from "./modal.js";
 import { getIsPosterOpen, setIsIsPosterOpen } from "./state.js";

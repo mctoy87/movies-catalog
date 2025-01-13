@@ -1,4 +1,4 @@
-import { initTRPC } from '@trpc/server';
+import {initTRPC} from '@trpc/server';
 
 const films = [
   {id: 1234, nameRu: 'Man in black', year: 2001, length: 189, rating: 8.2},
@@ -19,9 +19,7 @@ const trpc = initTRPC.create();
  * that can be used throughout the router
  */
 export const trpcRouter = trpc.router({
-  getfilms: trpc.procedure.query(() => {
-    return { films };
-  })
+  getfilms: trpc.procedure.query(() => ({films})),
 });
 
 export type TrpcRouter = typeof trpcRouter;

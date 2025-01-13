@@ -1,8 +1,8 @@
 import type {TrpcRouter} from '@moviescatalog/backend/src/trpc';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { createTRPCReact } from '@trpc/react-query';
-import { httpBatchLink } from '@trpc/client';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import {createTRPCReact} from '@trpc/react-query';
+import {httpBatchLink} from '@trpc/client';
 
 export const trpc = createTRPCReact<TrpcRouter>();
 
@@ -23,10 +23,8 @@ const trpcClient = trpc.createClient({
   ],
 });
 
-export const TrpcProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </trpc.Provider>
-  )
-}
+export const TrpcProvider = ({children}: { children: React.ReactNode }) => (
+  <trpc.Provider client={trpcClient} queryClient={queryClient}>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  </trpc.Provider>
+);

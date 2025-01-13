@@ -3,7 +3,9 @@ import { setupEventListeners } from './src/js/eventListeners.js';
 import { getFilmDetails, renderFilms } from './src/js/film.js';
 import { getIsFirstFetch, getIsPosterOpen, setIsFirstFetch, setCurrentFilmId } from './src/js/state.js';
 
-!getIsFirstFetch() && setIsFirstFetch(true); // Сбрасываем флаг после перезагрузки
+if (!getIsFirstFetch()) {
+  setIsFirstFetch(true); // Сбрасываем флаг после перезагрузки
+}
 
 export const fetchAndRenderTopFilms = async () => {
 
@@ -27,7 +29,7 @@ export const fetchAndRenderTopFilms = async () => {
 
       // Сбрасываем флаг после первого запроса
       setIsFirstFetch(false); 
-    };
+    }
 
   } catch (error) {
     console.error('Ошибка при получении фильмов:', error);
