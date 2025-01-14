@@ -9,7 +9,7 @@ const films = [
 ];
 
 const x: string = 'hello';
-console.log('x: ', x);
+
 if (Math.random()) console.log('x: ', x);
 /**
  * Initialization of tRPC backend
