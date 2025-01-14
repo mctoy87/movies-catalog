@@ -8,6 +8,8 @@ const films = [
   {id: 1238, nameRu: 'Man in black', year: 2001, length: 189, rating: 8.2},
 ];
 
+const x: string = 'hello';
+if (Math.random()) console.log('x: ', x);
 /**
  * Initialization of tRPC backend
  * Should be done only once per backend!

@@ -1,0 +1,7 @@
+{
+  "*.{ts, tsx, js}": [
+    "npx eslint --fix",
+    "prettier --log-level warn --cache --write"
+  ],
+  "*.{json, css, scss}": "prettier --log-level warn --cache --write"
+}
