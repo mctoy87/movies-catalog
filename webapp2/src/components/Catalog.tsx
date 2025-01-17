@@ -1,6 +1,8 @@
 // src/components/Catalog.tsx
 
+import {Link} from 'react-router';
 import {trpc} from '../lib/trpc';
+import {getViewMovieRote} from '../lib/routes';
 
 export const Catalog = () => {
   const {data, error, isLoading, isFetching, isError} =
@@ -37,22 +39,20 @@ export const Catalog = () => {
           {data && data.films.length > 0 ? (
             <ul className="catalog__movies-list movies__list">
               {/* Пример элемента фильма */}
-              {data.films.map(
-                  (
-                      film, // Добавлено return
-                  ) => (
-                    <li key={film.id} className="movies__item card">
-                      <img
-                        src="./img/cover.webp"
-                        alt={film.nameRu}
-                        className="card__img"
-                      />
-                      <h4 className="card__title">{film.nameRu}</h4>
-                      <p className="card__release-date">{film.year}</p>
-                      <p className="card__rate">Рейтинг: {film.rating}</p>
-                    </li>
-                  ),
-              )}
+              {data.films.map((film) => (
+                <li key={film.id} className="movies__item card">
+                  <Link to={getViewMovieRote({movieId: String(film.id)})}>
+                    <img
+                      src="./img/cover.webp"
+                      alt={film.nameRu}
+                      className="card__img"
+                    />
+                    <h4 className="card__title">{film.nameRu}</h4>
+                    <p className="card__release-date">{film.year}</p>
+                    <p className="card__rate">Рейтинг: {film.rating}</p>
+                  </Link>
+                </li>
+              ))}
             </ul>
           ) : (
             <div>Нет доступных фильмов</div>
