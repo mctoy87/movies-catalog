@@ -3,6 +3,7 @@ import {Footer} from '../../components/Footer';
 import {Header} from '../../components/Header';
 import {Modal} from '../../components/Modal';
 import {trpc} from '../../lib/trpc';
+import {Layout} from '../../components/Layout';
 
 export const ViewMoviePage = () => {
   const {movieId} = useParams() as {movieId: string};
@@ -29,7 +30,7 @@ export const ViewMoviePage = () => {
 
   return (
     <section className="release">
-      <div className="container release__container">
+      <Layout className="release__container">
         <h1 className="release__title visually-hidden"></h1>
         <Header />
         <main className="release_main">
@@ -63,7 +64,7 @@ export const ViewMoviePage = () => {
         </main>
         <Footer />
         <Modal />
-      </div>
+      </Layout>
     </section>
   );
 };

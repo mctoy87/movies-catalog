@@ -3,6 +3,7 @@
 import {Link} from 'react-router';
 import {trpc} from '../lib/trpc';
 import {getViewMovieRote} from '../lib/routes';
+import {Layout} from './Layout';
 
 export const Catalog = () => {
   const {data, error, isLoading, isFetching, isError} =
@@ -30,7 +31,7 @@ export const Catalog = () => {
 
   return (
     <section className="catalog">
-      <div className="container catalog__container">
+      <Layout className="catalog__container">
         <h2 className="catalog__title visually-hidden">Все фильмы</h2>
         <div className="catalog__film-container movies">
           <h3 className="catalog__movies-title movies__title">
@@ -66,7 +67,7 @@ export const Catalog = () => {
             Следующие 20 фильмов
           </button>
         </div>
-      </div>
+      </Layout>
     </section>
   );
 };

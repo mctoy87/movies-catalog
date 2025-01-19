@@ -53,8 +53,8 @@ export const trpcRouter = trpc.router({
         filmId: z.string(),
       })
     )
-    .query((input) => {
-      const film = films.find((film) => film.id === input.input.filmId);
+    .query(({input}) => {
+      const film = films.find((film) => film.id === input.filmId);
       // if (!film) throw new Error(`Film ${input.input.filmId} is not found`);
       return {film: film || null};
     }),

@@ -1,6 +1,8 @@
+import {Layout} from './Layout';
+
 export const Header = () => (
   <header className="header">
-    <div className="container">
+    <Layout>
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
@@ -17,6 +19,6 @@ export const Header = () => (
           </li>
         </ul>
       </nav>
-    </div>
+    </Layout>
   </header>
 );
