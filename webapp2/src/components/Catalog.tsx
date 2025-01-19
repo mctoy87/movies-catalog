@@ -6,7 +6,7 @@ import {getViewMovieRote} from '../lib/routes';
 
 export const Catalog = () => {
   const {data, error, isLoading, isFetching, isError} =
-    trpc.getfilms.useQuery();
+    trpc.getFilms.useQuery();
 
   if (isLoading || isFetching) {
     return (

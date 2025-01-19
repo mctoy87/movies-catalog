@@ -2,9 +2,31 @@ import {useParams} from 'react-router';
 import {Footer} from '../../components/Footer';
 import {Header} from '../../components/Header';
 import {Modal} from '../../components/Modal';
+import {trpc} from '../../lib/trpc';
 
 export const ViewMoviePage = () => {
   const {movieId} = useParams() as {movieId: string};
+
+  const {data, error, isLoading, isFetching, isError} = trpc.getFilm.useQuery({
+    filmId: movieId,
+  });
+
+  if (isLoading || isFetching) {
+    return (
+      <div>
+        <p>Идет загрузка...</p>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return <div>Ошибка загрузки: {error.message}</div>;
+  }
+
+  if (!data || !data.film) {
+    return <div>`Movie with id = {movieId} not found`</div>;
+  }
+
   return (
     <section className="release">
       <div className="container release__container">
@@ -21,21 +43,20 @@ export const ViewMoviePage = () => {
               <button className="release_trailer-btn">Смотеть трейлер</button>
             </div>
             <div className="release__description-wrapper">
-              <h2 className="release__title">{movieId}</h2>
-              <p className="release__country">Страна: США</p>
-              <p className="release__duration">Продожительность: 3 ч. 1 мин.</p>
-              <p className="release__genre">приключение, фантастика</p>
-              <p className="release__rating">Рейтинг: 2018</p>
-              <p className="release__year">Год: 2018</p>
+              <h2 className="release__title">{data.film.nameRu}</h2>
+              <p className="release__country">
+                Страна: {data.film.countriesText}
+              </p>
+              <p className="release__duration">
+                Продожительность: {data.film.length}
+              </p>
+              <p className="release__genre">
+                Жанр: {[...data.film.genres].join(', ')}
+              </p>
+              <p className="release__rating">Рейтинг: {data.film.rating}</p>
+              <p className="release__year">Год: {data.film.year}</p>
               <p className="release__description">
-                Земля, пережившая войну с&nbsp;инопланетными захватчиками,
-                опустела; остатки человечества готовятся покинуть непригодную
-                для жизни планету. Главный герой&nbsp;&mdash; техник
-                по&nbsp;обслуживанию дронов&nbsp;&mdash; находит разбившийся
-                корабль NASA, команда которого погибает у&nbsp;него
-                на&nbsp;глазах. Ему удаётся спасти лишь одну
-                женщину&nbsp;&mdash; и&nbsp;вскоре он&nbsp;понимает, что это
-                перевернёт его жизнь.
+                Описание фильма: {data.film.description}
               </p>
             </div>
           </article>

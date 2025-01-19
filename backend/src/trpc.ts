@@ -1,13 +1,17 @@
 import {initTRPC} from '@trpc/server';
 import _ from 'lodash';
+import {z} from 'zod';
 
 const films = _.times(100, (i) => ({
   id: `${i}`,
   nameRu: `Film title id: ${i}`,
   year: `${1900 + i}`,
-  length: 189,
+  length: Math.floor(Math.random() * (200 - 60)) + 60, //генератор случайных чисел от 60 до 200
   rating: 8.2,
   description: `Описание фильма id: ${i}`,
+  countriesText: 'США',
+  posterUrl: `https://kinopoiskapiunofficial.tech/images/posters/kp/301.jpg`,
+  genres: ['Приключение', 'Боевик'],
 }));
 
 // const films = [
@@ -38,11 +42,22 @@ const trpc = initTRPC.create();
  * that can be used throughout the router
  */
 export const trpcRouter = trpc.router({
-  getfilms: trpc.procedure.query(() => ({
+  getFilms: trpc.procedure.query(() => ({
     films: films.map((film) =>
       _.pick(film, ['id', 'nameRu', 'year', 'rating'])
     ),
   })),
+  getFilm: trpc.procedure
+    .input(
+      z.object({
+        filmId: z.string(),
+      })
+    )
+    .query((input) => {
+      const film = films.find((film) => film.id === input.input.filmId);
+      // if (!film) throw new Error(`Film ${input.input.filmId} is not found`);
+      return {film: film || null};
+    }),
 });
 
 export type TrpcRouter = typeof trpcRouter;
