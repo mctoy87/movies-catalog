@@ -1,4 +1,6 @@
+import {Link} from 'react-router';
 import {Layout} from './Layout';
+import {getAllMoviesRoute} from '../lib/routes';
 
 export const Header = () => (
   <header className="header">
@@ -6,7 +8,9 @@ export const Header = () => (
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
-            <a className="header__nav-link">Главная</a>
+            <Link to={getAllMoviesRoute()} className="header__nav-link">
+              Главная
+            </Link>
           </li>
           <li className="header__nav-item">
             <a className="header__nav-link">Поиск</a>

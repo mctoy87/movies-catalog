@@ -1,0 +1,9 @@
+:root {
+  --default-bg-color: #000;
+  --default-text-color: #fff;
+  --default-fz: 16px;
+  --default-line-height: 1.15;
+  --second-fz: 14px;
+  --third-fz: 18px;
+  --color-1: #162344;
+}

@@ -1,7 +1,7 @@
 const getRouteParams = <T extends Record<string, boolean>>(object: T) =>
   Object.keys(object).reduce(
-    (acc, key) => ({...acc, [key]: `:${key}`}),
-    {}
+      (acc, key) => ({...acc, [key]: `:${key}`}),
+      {},
   ) as Record<keyof T, string>;
 
 export const getAllMoviesRoute = () => '/';

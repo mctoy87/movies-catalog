@@ -6,7 +6,7 @@ const films = _.times(100, (i) => ({
   id: `${i}`,
   nameRu: `Film title id: ${i}`,
   year: `${1900 + i}`,
-  length: Math.floor(Math.random() * (200 - 60)) + 60, //генератор случайных чисел от 60 до 200
+  length: Math.floor(Math.random() * (200 - 60)) + 60, // генератор случайных чисел от 60 до 200
   rating: 8.2,
   description: `Описание фильма id: ${i}`,
   countriesText: 'США',
@@ -44,20 +44,20 @@ const trpc = initTRPC.create();
 export const trpcRouter = trpc.router({
   getFilms: trpc.procedure.query(() => ({
     films: films.map((film) =>
-      _.pick(film, ['id', 'nameRu', 'year', 'rating'])
+      _.pick(film, ['id', 'nameRu', 'year', 'rating']),
     ),
   })),
   getFilm: trpc.procedure
-    .input(
-      z.object({
-        filmId: z.string(),
-      })
-    )
-    .query(({input}) => {
-      const film = films.find((film) => film.id === input.filmId);
-      // if (!film) throw new Error(`Film ${input.input.filmId} is not found`);
-      return {film: film || null};
-    }),
+      .input(
+          z.object({
+            filmId: z.string(),
+          }),
+      )
+      .query(({input}) => {
+        const film = films.find((film) => film.id === input.filmId);
+        // if (!film) throw new Error(`Film ${input.input.filmId} is not found`);
+        return {film: film || null};
+      }),
 });
 
 export type TrpcRouter = typeof trpcRouter;

@@ -35,6 +35,9 @@
     "typescript-eslint": "^8.19.1"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "trpc": "^0.11.3"
   }
 }
