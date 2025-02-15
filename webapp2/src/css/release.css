@@ -1,0 +1,12 @@
+.release {
+  padding: 10px 0;
+}
+
+.release_trailer-btn {
+  color: var(--default-text-color);
+}
+
+.release__title {
+  padding-top: 10px;
+  margin-bottom: 30px;
+}

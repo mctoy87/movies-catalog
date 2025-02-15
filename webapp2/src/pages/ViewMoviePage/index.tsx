@@ -1,9 +1,10 @@
-import {useParams} from 'react-router';
+import {Link, useParams} from 'react-router';
 import {Footer} from '../../components/Footer';
 import {Header} from '../../components/Header';
 import {Modal} from '../../components/Modal';
 import {trpc} from '../../lib/trpc';
 import {Layout} from '../../components/Layout';
+import {getOrderMovieRoute} from '../../lib/routes';
 
 export const ViewMoviePage = () => {
   const {movieId} = useParams() as {movieId: string};
@@ -30,8 +31,8 @@ export const ViewMoviePage = () => {
 
   return (
     <section className="release">
-      <Layout className="release__container">
-        <h1 className="release__title visually-hidden"></h1>
+      <Layout className="release__container container">
+        <h1 className="release__title visually-hidden">Постер фильма</h1>
         <Header />
         <main className="release_main">
           <article className="release__wrapper">
@@ -44,7 +45,11 @@ export const ViewMoviePage = () => {
               <button className="release_trailer-btn">Смотеть трейлер</button>
             </div>
             <div className="release__description-wrapper">
-              <h2 className="release__title">{data.film.nameRu}</h2>
+              <h2 className="release__title">
+                <Link to={getOrderMovieRoute({movieId: String(movieId)})}>
+                  {data.film.nameRu}
+                </Link>
+              </h2>
               <p className="release__country">
                 Страна: {data.film.countriesText}
               </p>
