@@ -3,5 +3,6 @@
     "npx eslint --fix",
     "prettier --log-level warn --cache --write"
   ],
+  "*.css": "npx stylelint --cache --cache-location ./node_modules/.cache/.stylelintcache --fix",
   "*.{json, css, scss}": "prettier --log-level warn --cache --write"
 }
