@@ -6,7 +6,7 @@
   height: fit-content;
   max-height: 100vh;
   border-right: 1px solid var(--color-1);
-  background-color: rgba(5, 56, 185, 0.2);
+  background-color: rgb(5 56 185 / 20%);
   overflow-y: auto;
 }
 
@@ -54,6 +54,7 @@
   font-size: var(--third-fz);
   font-weight: 300;
 }
+
 /* 
 .hero__close {
 } */

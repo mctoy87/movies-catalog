@@ -43,9 +43,8 @@
   display: none;
   margin: 0 auto;
   padding: 10px 30px;
-
   border-radius: 6px;
-  background-color: rgb(16, 85, 205);
+  background-color: rgb(16 85 205);
   color: #fff;
   transition: opacity 0.2s ease-in;
 

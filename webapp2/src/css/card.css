@@ -3,7 +3,7 @@
   padding-bottom: 15px;
   flex-basis: 200px;
   border-radius: 6px;
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(22 22 22);
   text-align: center;
   cursor: pointer;
   transition:
@@ -13,8 +13,8 @@
 
   &:hover {
     transform: translateY(-10px);
-    background-color: rgb(35, 35, 35);
-    box-shadow: 0px 10px 20px rgba(0, 65, 152, 0.45);
+    background-color: rgb(35 35 35);
+    box-shadow: 0 10px 20px rgb(0 65 152 / 45%);
   }
 }
 
@@ -35,12 +35,12 @@
 
 .card__release-date {
   margin-bottom: 5px;
-  color: rgb(7, 150, 252);
+  color: rgb(7 150 252);
   font-size: var(--second-fz);
   font-weight: 300;
 }
 
 .card__rate {
-  color: rgb(240, 246, 75);
+  color: rgb(240 246 75);
   font-size: var(--second-fz);
 }

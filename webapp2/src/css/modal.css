@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0 0 0 / 50%);
   cursor: pointer;
   padding: 30px;
   overflow-y: auto;
@@ -21,6 +21,7 @@
 
 .modal__title {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .modal__close {
@@ -42,10 +43,6 @@
 
 .modal__close:focus-visible {
   outline-color: green;
-}
-
-.modal__title {
-  text-align: center;
 }
 
 .modal__form {
@@ -87,5 +84,5 @@
 
 .modal__signin-link,
 .modal__login-link {
-  color: rgb(7, 150, 252);
+  color: rgb(7 150 252);
 }
