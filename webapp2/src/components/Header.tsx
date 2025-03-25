@@ -2,7 +2,11 @@ import {Link} from 'react-router';
 import {Layout} from './Layout';
 import {getAllMoviesRoute} from '../lib/routes';
 
-export const Header = () => (
+type HeaderProps = {
+  onOpenModal: () => void;
+};
+
+export const Header = ({onOpenModal}: HeaderProps) => (
   <header className="header">
     <Layout>
       <nav className="header__nav">
@@ -19,7 +23,9 @@ export const Header = () => (
             <a className="header__nav-link">Избранное</a>
           </li>
           <li className="header__nav-item header__nav-login">
-            <a className="header__nav-link">Вход</a>
+            <a onClick={onOpenModal} className="header__nav-link">
+              Вход
+            </a>
           </li>
         </ul>
       </nav>

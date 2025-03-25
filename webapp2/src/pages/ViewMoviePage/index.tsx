@@ -1,12 +1,12 @@
 import {Link, useParams} from 'react-router';
 import {Footer} from '../../components/Footer';
 import {Header} from '../../components/Header';
-import {Modal} from '../../components/Modal';
 import {trpc} from '../../lib/trpc';
 import {Layout} from '../../components/Layout';
 import {getOrderMovieRoute} from '../../lib/routes';
+import {ViewMoviePageProps} from '../../types/pages';
 
-export const ViewMoviePage = () => {
+export const ViewMoviePage = ({openModal}: ViewMoviePageProps) => {
   const {movieId} = useParams() as {movieId: string};
 
   const {data, error, isLoading, isFetching, isError} = trpc.getFilm.useQuery({
@@ -33,8 +33,8 @@ export const ViewMoviePage = () => {
     <section className="release">
       <Layout className="release__container container">
         <h1 className="release__title visually-hidden">Постер фильма</h1>
-        <Header />
-        <main className="release_main">
+        <Header onOpenModal={() => openModal('login')} />
+        <main className="release__main">
           <article className="release__wrapper">
             <div className="release__poster-wrapper">
               <img
@@ -42,7 +42,7 @@ export const ViewMoviePage = () => {
                 src="/img/cover.webp"
                 alt="Описание фильма"
               />
-              <button className="release_trailer-btn">Смотеть трейлер</button>
+              <button className="release__trailer-btn">Смотеть трейлер</button>
             </div>
             <div className="release__description-wrapper">
               <h2 className="release__title">
@@ -68,7 +68,6 @@ export const ViewMoviePage = () => {
           </article>
         </main>
         <Footer />
-        <Modal />
       </Layout>
     </section>
   );

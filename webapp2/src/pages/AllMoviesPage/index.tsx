@@ -1,15 +1,14 @@
 import {Header} from '../../components/Header';
 import {Catalog} from '../../components/Catalog';
 import {Footer} from '../../components/Footer';
-import {Modal} from '../../components/Modal';
+import {AllMoviesPageProps} from '../../types/pages';
 
-export const AllMoviesPage = () => (
+export const AllMoviesPage = ({openModal}: AllMoviesPageProps) => (
   <div>
-    <Header />
+    <Header onOpenModal={() => openModal('login')} />
     <main>
       <Catalog />
     </main>
     <Footer />
-    <Modal />
   </div>
 );
