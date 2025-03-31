@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {FormType} from '../types/modal';
 
 type ModalProps = {
@@ -7,11 +8,28 @@ type ModalProps = {
 };
 
 export const Modal = ({onClose, formType, onFormChange}: ModalProps) => {
+  // Закрытие на Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
+  // Закрытие на клик по overlay
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('modal')) {
+      onClose();
+    }
+  };
+
   if (formType !== 'login' && formType !== 'register') {
     throw new Error(`Invalid formType: ${formType}`);
   }
   return (
-    <div className="modal">
+    <div className="modal" onClick={handleOverlayClick}>
       <div className="modal__main">
         <div className="modal__container">
           {/* Форма входа */}

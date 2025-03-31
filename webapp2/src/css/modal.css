@@ -3,20 +3,23 @@
   inset: 0;
   background-color: rgb(0 0 0 / 50%);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
-  overflow-y: auto;
-  /* display: none; */
+  z-index: 1000;
 }
 
 .modal__main {
   position: relative;
   max-width: 600px;
+  width: 100%;
   background-color: azure;
-  margin: auto;
   color: #000;
   border-radius: 16px;
   padding: 30px;
-  cursor: default;
+  cursor: default; /* Отменяем cursor: pointer от родителя */
+  margin: 0; /* Убираем margin: auto */
 }
 
 .modal__title {
