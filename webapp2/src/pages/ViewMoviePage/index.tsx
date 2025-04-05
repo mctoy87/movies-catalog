@@ -5,6 +5,7 @@ import {trpc} from '../../lib/trpc';
 import {Layout} from '../../components/Layout';
 import {getOrderMovieRoute} from '../../lib/routes';
 import {ViewMoviePageProps} from '../../types/pages';
+import {Shedule} from '../../components/Schedule';
 
 export const ViewMoviePage = ({openModal}: ViewMoviePageProps) => {
   const {movieId} = useParams() as {movieId: string};
@@ -39,7 +40,7 @@ export const ViewMoviePage = ({openModal}: ViewMoviePageProps) => {
             <div className="release__poster-wrapper">
               <img
                 className="release__img"
-                src="/img/cover.webp"
+                src={data.film.posterUrl}
                 alt="Описание фильма"
               />
               <button className="release__trailer-btn">Смотеть трейлер</button>
@@ -65,6 +66,7 @@ export const ViewMoviePage = ({openModal}: ViewMoviePageProps) => {
                 Описание фильма: {data.film.description}
               </p>
             </div>
+            <Shedule title={data.film.nameRu} showtimes={data.film.showtimes} />
           </article>
         </main>
         <Footer />

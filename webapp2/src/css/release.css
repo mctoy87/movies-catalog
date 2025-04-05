@@ -2,6 +2,12 @@
   padding: 10px 0;
 }
 
+.release__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .release__trailer-btn {
   color: var(--default-text-color);
 }
@@ -9,4 +15,13 @@
 .release__title {
   padding-top: 10px;
   margin-bottom: 30px;
+}
+
+.release__description-wrapper {
+  border: 1px solid yellow;
+  max-width: 50%;
+}
+
+.release__poster-wrapper {
+  max-width: 300px;
 }
