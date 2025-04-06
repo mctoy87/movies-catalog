@@ -1,30 +1,41 @@
 .shedule {
   max-width: 30%;
   border: 1px solid red;
+  padding: 20px;
 }
 
 .shedule__title {
+  font-weight: 400;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .shedule__list {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .shedule__item {
   cursor: pointer;
-  margin: 10px 0px;
-  border: 1px solid green;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
+  box-shadow: 7px 7px 6px -8px rgba(235, 235, 235, 0.5);
+  background-color: #121111f7;
 }
 
 .shedule__time {
+  font-size: 26px;
 }
 
 .shedule__price {
+  font-size: var(--second-fz);
+  font-weight: 300;
+  color: rgba(235, 235, 235, 0.5);
 }
 
 .shedule__hall {
+  font-size: var(--second-fz);
+  font-weight: 300;
+  color: rgba(235, 235, 235, 0.5);
 }

@@ -20,24 +20,28 @@ const films = _.times(100, (i) => ({
       time: '10:00',
       price: 450,
       hall: {id: 1, name: 'Зал 1', technology: 'IMAX'},
+      date: '2024-11-01',
     },
     {
       id: 2,
       time: '13:30',
       price: 450,
       hall: {id: 1, name: 'Зал 1', technology: 'IMAX'},
+      date: '2025-12-01',
     },
     {
       id: 3,
       time: '17:00',
       price: 500,
       hall: {id: 2, name: 'Зал 2', technology: 'Dolby Atmos'},
+      date: '2025-11-01',
     },
     {
       id: 4,
       time: '20:30',
       price: 550,
       hall: {id: 2, name: 'Зал 2', technology: 'Dolby Atmos'},
+      date: '2025-12-01',
     },
   ],
 }));

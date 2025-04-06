@@ -11,6 +11,7 @@ interface Showtime {
   time: string;
   price: number;
   hall: Hall;
+  date: string;
 }
 
 interface ScheduleProps {
@@ -26,20 +27,29 @@ export const Shedule: React.FC<ScheduleProps> = ({title, showtimes}) => {
     console.log(`Время выбранного сеанса ${session.time}`);
   };
 
+  // Фильтрация ближайших сеансов
+  const currentDate = new Date();
+
+  const upcomingShowtimes = showtimes.filter((showtime) => {
+    const showtimeDate = new Date(`${showtime.date}T${showtime.time}:00`);
+    return showtimeDate >= currentDate; // Оставляем только будущие сеансы
+  });
+
   return (
     <div className="release__shedule shedule">
-      <h1 className="shedule__title">Расписание сеансов для: {title}</h1>
+      <h1 className="shedule__title">
+        Расписание сеансов на СЕГОДНЯ для: {title}
+      </h1>
       <ul className="shedule__list">
-        {showtimes.map((showtime) => (
+        {upcomingShowtimes.map((showtime) => (
           <li
             key={showtime.id}
             className="shedule__item"
             onClick={() => handleSessionClick(showtime)}
-            style={{cursor: 'pointer', margin: '10px 0'}}
           >
-            <p className="shedule__time">Время: {showtime.time}</p>
-            <p className="shedule__price">Цена: {showtime.price}₽</p>
-            <p className="shedule__hall">Зал: {showtime.hall.name}</p>
+            <p className="shedule__time">{showtime.time}</p>
+            <p className="shedule__price">{showtime.price}₽</p>
+            <p className="shedule__hall">{showtime.hall.name}</p>
           </li>
         ))}
       </ul>
@@ -47,8 +57,8 @@ export const Shedule: React.FC<ScheduleProps> = ({title, showtimes}) => {
         <div>
           <h2>Выбранный сеанс:</h2>
           <p>
-            Время: {selectedSession.time} | Цена: {selectedSession.price} | Зал:{' '}
-            {selectedSession.hall.name}
+            Время: {selectedSession.time} | Цена: {selectedSession.price} |{' '}
+            {selectedSession.hall.name} | Дата: {selectedSession.date}
           </p>
         </div>
       )}
